@@ -1,3 +1,5 @@
+"use client"
+
 import { HeaderProps, NavItem } from './types';
 
 const defaultNavItems: NavItem[] = [

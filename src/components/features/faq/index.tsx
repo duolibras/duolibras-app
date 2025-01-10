@@ -1,4 +1,5 @@
-// src/components/features/faq/FAQ.tsx
+"use client"
+
 import { useState } from 'react';
 import { FAQProps } from './types';
 import { FAQItem } from './faq-item';
