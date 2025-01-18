@@ -3,14 +3,19 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Components } from '@/components'
+import { useAuth } from '@/domains/auth/context/auth-context';
 
 export function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  
+  const { useSignIn } = useAuth()
+  const { mutate: signIn } = useSignIn()
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implementar lógica de login
+    console.log('oi')
+    signIn({ email, password });
   };
 
   return (

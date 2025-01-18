@@ -4,7 +4,7 @@ import { CreateUserDTO, SignInDTO } from './models/auth-dto'
 
 export class AuthApi extends ApiClient {
   async signIn(data: SignInDTO) {
-    return this.post<SignInResponse>('/auth/signin', data)
+    return this.post<SignInResponse>('/auth/sign-in', data)
   }
 
   async signUp(data: CreateUserDTO) {

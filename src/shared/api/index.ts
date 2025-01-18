@@ -18,7 +18,7 @@ export class ApiClient {
   private _baseURL = process.env.NEXT_PUBLIC_API_URL;
   constructor(
     private httpClient: HttpClient,
-    private baseURL = this._baseURL
+    private baseURL = 'http://localhost:3001'
   ) {}
 
   private handleResponse = async <T>(

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import ReactQueryProvider from "../shared/providers/react-query-provider";
 import "./globals.css";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { AuthProvider } from "@/domains/auth/context/auth-context";
 
 export const metadata: Metadata = {
   title: "DuoLibras",
@@ -19,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <ReactQueryProvider>
-          {children}
-          <ReactQueryDevtools initialIsOpen={false} />
+          <AuthProvider>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+          </AuthProvider>
         </ReactQueryProvider>
       </body>
     </html>

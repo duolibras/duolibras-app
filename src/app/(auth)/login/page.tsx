@@ -1,21 +1,40 @@
+"use client"
+
 import { Components } from '@/components';
-import Link from 'next/link';
+import { LoginContent } from './components/login-content';
+import { useAuth } from '@/domains/auth/context/auth-context';
+
 
 export default function LoginPage() {
+  const { useSignIn } = useAuth()
+  const { isPending, error } = useSignIn()
+  
+  if (isPending) {
+    return (
+      <Components.UI.PageTransition>
+        <div className="min-h-screen bg-black">
+          <p>loading...</p>
+          {/* <Components.UI.Loading /> */}
+        </div>
+      </Components.UI.PageTransition>
+    );
+  }
+
+  if (error) {
+    return (
+      <Components.UI.PageTransition>
+        <div className="min-h-screen bg-black">
+          <p>error...</p>
+          {/* <Components.UI.Loading /> */}
+        </div>
+      </Components.UI.PageTransition>
+    );
+  }
+
   return (
     <Components.UI.PageTransition>
       <div className="min-h-screen bg-black">
-        <Components.UI.GridBackground />
-        <div className="relative z-10">
-          <div className="container mx-auto px-6 py-8">
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-700 bg-clip-text text-transparent">
-              DuoLibras
-            </Link>
-          </div>
-          <main className="flex min-h-[calc(100vh-120px)] items-center justify-center px-6">
-            <Components.Features.Auth.LoginForm />
-          </main>
-        </div>
+        <LoginContent />
       </div>
     </Components.UI.PageTransition>
   );
