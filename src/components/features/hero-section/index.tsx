@@ -13,7 +13,7 @@ export const HeroSection = () => {
        height={120} 
      />
      <p className="text-2xl mt-6 mb-12">
-       Aprenda Libras de forma divertida e acessível
+     Aprenda libras de forma interativa e divertida com IA 🐬
      </p>
      <HeroButton />
      <div className="mt-8 flex justify-center space-x-4">
