@@ -35,9 +35,7 @@ export class ApiClient {
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };
-    console.log('cheguei')
     const accessToken = localStorage.getItem('accessToken')
-    console.log(accessToken);
     if (accessToken) {
       headers['Authorization'] = `Bearer ${accessToken}`;
     }

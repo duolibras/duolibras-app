@@ -29,7 +29,6 @@ export function LoginForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = signInSchema.safeParse({ email, password });
-    console.log(result);
     if (!result.success) {
       // Tratar erros de validação
       console.log(result.error.errors);

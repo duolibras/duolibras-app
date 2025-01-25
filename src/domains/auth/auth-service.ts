@@ -39,11 +39,9 @@ export class AuthService {
 
   async signIn(data: SignInDTO) {
     const response = await this.authApi.signIn(data)
-    console.log(response.data?.accessToken)
     if (response.error) {
       return { error: response.error }
     }
-    console.log(response.data?.accessToken);
     if (response.data?.accessToken) {
       localStorage.setItem('accessToken', response.data.accessToken);
       apiClient.setAccessToken(response.data.accessToken);

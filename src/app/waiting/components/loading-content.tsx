@@ -36,12 +36,8 @@ export default function LoadingContent({ onSuccess, onError, error }: LoadingCon
     return () => clearInterval(interval);
   }, [error, onError]);
 
-  console.log(error)
-  console.log(messageIndex)
-  console.log(loadingMessages.length - 1)
   useEffect(() => {
     if (!error && messageIndex === loadingMessages.length - 1) {
-      console.log('pq n está entrando?')
       // Se for a última mensagem e não houver erro, chama o callback de sucesso após 1,2 segundos
       const timeout = setTimeout(() => {
         onSuccess?.();
