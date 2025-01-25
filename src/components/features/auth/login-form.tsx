@@ -4,18 +4,40 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Components } from '@/components'
 import { useAuth } from '@/domains/auth/context/auth-context';
+import { signInSchema } from '@/domains/auth/api/models/auth-dto';
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
 
 export function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
+  const router = useRouter();
   const { useSignIn } = useAuth()
-  const { mutate: signIn } = useSignIn()
+  const { mutate: signIn, isPending } = useSignIn({
+    onMutate: () => {},
+    onError: (error) => {
+      toast.error(error.message, { id: 'login' });
+      console.log('Erro ao realizar login', error);
+    },
+    onSuccess: () => {
+      toast.success('Login realizado com sucesso', { id: 'login' });
+      router.push('/waiting');
+    },
+  })
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('oi')
+    const result = signInSchema.safeParse({ email, password });
+    console.log(result);
+    if (!result.success) {
+      // Tratar erros de validação
+      console.log(result.error.errors);
+      return;
+    }
+    
     signIn({ email, password });
+    
   };
 
   return (
@@ -67,9 +89,9 @@ export function LoginForm() {
           </div>
         </div>
 
-        <Components.UI.Button type="submit" className="w-full">
-          Entrar
-        </Components.UI.Button>
+        <Components.UI.Button type="submit" className="w-full py-4 flex align-center justify-center">
+          { isPending ? <Components.UI.Spinner /> :  "Entrar" }
+          </Components.UI.Button>
 
         <p className="text-center text-sm text-gray-400">
           Não tem uma conta?{' '}

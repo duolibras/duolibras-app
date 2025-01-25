@@ -14,6 +14,7 @@ import { GridBackground } from './ui/grid-background';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { PageTransition } from './ui/page-transition';
+import { Spinner } from './ui/spinner';
 
 export const Components = {
   Features: {
@@ -34,5 +35,6 @@ export const Components = {
     GridBackground,
     Input,
     PageTransition,
+    Spinner,
   },
 }

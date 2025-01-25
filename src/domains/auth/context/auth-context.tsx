@@ -1,22 +1,21 @@
 "use client"
 
 import { createContext, useContext } from 'react'
-import { AuthApi } from '../api/auth-api'
-import { axiosClient } from '@/shared/api/axios'
 import { createAuthController } from '@/domains/auth/auth-controller'
 import { AuthService } from '@/domains/auth/auth-service'
 
 interface AuthContextData {
+  useProfile: ReturnType<typeof createAuthController>['useProfile']
   useSignIn: ReturnType<typeof createAuthController>['useSignIn']
-  useSignUp: ReturnType<typeof createAuthController>['useSignUp']
+  useStudentSignUp: ReturnType<typeof createAuthController>['useStudentSignUp']
+  useTeacherSignUp: ReturnType<typeof createAuthController>['useTeacherSignUp']
   useSignOut: ReturnType<typeof createAuthController>['useSignOut']
 }
 
 const AuthContext = createContext({} as AuthContextData)
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const authApi = new AuthApi(axiosClient)
-  const authService = new AuthService(authApi)
+  const authService = new AuthService()
   const controller = createAuthController(authService)
 
   return (
