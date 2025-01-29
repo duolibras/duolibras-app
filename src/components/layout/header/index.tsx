@@ -21,7 +21,7 @@ export const Header = ({
           {logo}
         </Link>
       </div>
-      <div className="flex space-x-6 text-white flex items-center">
+      <div className="flex space-x-6 text-white items-center">
         {navItems.map((item) => (
           <Link
             key={item.label}
