@@ -18,6 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors">
