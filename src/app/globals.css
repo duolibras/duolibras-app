@@ -26,3 +26,9 @@ body {
     @apply text-text-light dark:text-text-dark;
   }
 }
+
+@layer utilities {
+  .animate-in {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+}

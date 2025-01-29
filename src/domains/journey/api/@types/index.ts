@@ -1,7 +1,7 @@
 export enum Status { 
-  'AVAILABLE',
-  'UNAVAILABLE',
-  'ACCOMPLISHED',
+  AVAILABLE = 'AVAILABLE',
+  UNAVAILABLE ='UNAVAILABLE',
+  ACCOMPLISHED = 'ACCOMPLISHED',
 }
 
 export type Lesson = {

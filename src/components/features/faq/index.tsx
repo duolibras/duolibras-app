@@ -16,19 +16,19 @@ export const FAQ = ({
   };
 
   return (
-    <div className={`container mx-auto px-6 py-16 ${className}`} id="faq">
-      <h2 className="text-3xl font-bold mb-8 text-white">{title}</h2>
-      <div className="space-y-4">
-        {items.map((item) => (
-          <FAQItem
-            key={item.id}
-            item={item}
-            isOpen={openFaqId === item.id}
-            onToggle={handleToggle}
-          />
-        ))}
+      <div className={`container mx-auto px-6 py-16 ${className}`} id="faq">
+        <h2 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">{title}</h2>
+        <div className="space-y-4">
+          {items.map((item) => (
+              <FAQItem
+                key={item.id}
+                item={item}
+                isOpen={openFaqId === item.id}
+                onToggle={handleToggle}
+              />
+          ))}
+        </div>
       </div>
-    </div>
   );
 };
 

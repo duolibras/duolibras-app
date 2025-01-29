@@ -40,15 +40,30 @@ export const createAuthController = (authService: AuthService) => {
     })
   }
 
-  const useStudentSignUp = () => {
+  const useStudentSignUp = (options?: UseMutationOptions<AuthResponse, Error, CreateUserDTO>) => {
     return useMutation({
-      mutationFn: (data: CreateUserDTO) => authService.studentSignUp(data)
+      mutationFn: async (data: CreateUserDTO) => {
+        const response = await authService.studentSignUp(data) 
+        if (response.error) {
+          throw response.error;
+        }
+        return response;
+      },
+      ...options,
     })
   }
 
-  const useTeacherSignUp = () => {
+  const useTeacherSignUp = (options?: UseMutationOptions<AuthResponse, Error, CreateUserDTO>) => {
     return useMutation({
-      mutationFn: (data: CreateUserDTO) => authService.teacherSignUp(data)
+      mutationFn: async (data: CreateUserDTO) => { 
+        const response  = await authService.teacherSignUp(data);
+
+        if (response.error) {
+          throw response.error;
+        }
+        return response;
+      },
+      ...options,
     })
   }
 

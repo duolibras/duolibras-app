@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <Components.UI.PageTransition>
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
         <Components.UI.GridBackground />
         <div className="relative z-10">
           <Components.Layout.Header />

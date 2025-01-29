@@ -11,10 +11,13 @@ export default function WaitingPage() {
   const { useProfile } = useAuth() 
   const { useMyJourney } = useJourney()
 
-  const { data: profile, error: profileError } = useProfile({})
-  const { error: journeyError } = useMyJourney()
+  const { data: profile, error: profileError } = useProfile()
+  const { error: journeyError } = useMyJourney({
+    enabled: profile?.account.role === Role.STUDENT,
+  })
   
   const handleSuccess = () => {
+    console.log(profile)
     if (profile?.account.role === Role.STUDENT) {
       router.push('/area-aluno')
     } else if (profile?.account.role === Role.TEACHER) {
@@ -22,7 +25,6 @@ export default function WaitingPage() {
     }
   }
 
-  // Função para redirecionar em caso de erro
   const handleError = () => {
     router.push('/login')
   }
@@ -31,7 +33,7 @@ export default function WaitingPage() {
     <LoadingContent
       onSuccess={handleSuccess}
       onError={handleError}
-      error={!!profileError || !!journeyError}
+      error={!!profileError || (profile?.account.role === Role.STUDENT && !!journeyError)}
     />
   )
 }

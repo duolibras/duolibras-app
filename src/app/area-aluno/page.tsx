@@ -1,8 +1,10 @@
 "use client"
+import { Role } from '@/domains/auth/@types';
 import { DashboardHeader } from './components/area-aluno-header';
 import { UnitList } from './components/unit-list';
 import { AuthService } from '@/domains/auth/auth-service';
 import { JourneyService } from '@/domains/journey/journey-service';
+import { ProtectedRoute } from '@/shared/protected-route';
 import { useQuery } from '@tanstack/react-query';
 
 export default function DashboardPage() {
@@ -29,14 +31,16 @@ export default function DashboardPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-      <div className="relative">
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent" aria-hidden="true" /> */}
-        <DashboardHeader account={profile?.account} />
-        <div className="relative container mx-auto px-4 py-8">
-          <UnitList units={journey.journey.units} />
+    <ProtectedRoute allowedRoles={[Role.STUDENT]}>
+      <main className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+        <div className="relative">
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent" aria-hidden="true" /> */}
+          <DashboardHeader account={profile?.account} />
+          <div className="relative container mx-auto px-4 py-8">
+            <UnitList units={journey.journey.units} />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </ProtectedRoute>
   );
 }

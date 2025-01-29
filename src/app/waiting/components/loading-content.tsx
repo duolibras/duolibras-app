@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react'; // Importe o ícone de erro da Lucide
+import { X } from 'lucide-react'; 
 
 interface LoadingContentProps {
-  onSuccess?: () => void; // Callback para sucesso
-  onError?: () => void; // Callback para erro
-  error?: boolean; // Indica se há um erro
+  onSuccess?: () => void; 
+  onError?: () => void; 
+  error?: boolean; 
 }
 
 const loadingMessages = [

@@ -20,7 +20,7 @@ export const Footer = ({
   return (
     <footer className="border-t border-gray-800 py-12 text-gray-400">
       <div className="container mx-auto px-6 text-center">
-        <p className="text-3xl font-bold mb-8 text-white">
+        <p className="text-3xl font-bold mb-8 text-gray-800 dark:text-white ">
           {motto}
         </p>
         <button onClick={navigation.toRegister} className="bg-green-600 text-white px-8 py-4 rounded-lg mb-12 hover:bg-green-700 transition-colors">
