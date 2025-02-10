@@ -1,40 +1,20 @@
-// Feature Components
-import { HeroSection } from './features/hero-section';
-import { FAQ } from './features/faq';
-import { Testimonials } from './features/testimonial';
-import { LoginForm } from './features/auth/login-form';
-import { RegisterForm } from './features/auth/register-form';
-
-// Layoyt Components
-import { Header } from './layout/header';
-import { Footer } from './layout/footer';
+// Layout Components
+import { HeaderProgress } from './layout/header-with-progress-bar';
 
 // UI Components
-import { GridBackground } from './ui/grid-background';
 import { Input } from './ui/input';
-import { Button } from './ui/button';
 import { PageTransition } from './ui/page-transition';
-import { Spinner } from './ui/spinner';
+import { OptionSelector } from './ui/option-selector';
+import { BottomModal } from './ui/bottom-modal';
 
 export const Components = {
-  Features: {
-    HeroSection,
-    FAQ,
-    Testimonials,
-    Auth: {
-      LoginForm,
-      RegisterForm,
-    },
-  },
   Layout: {
-    Header,
-    Footer,
+    HeaderProgress,
   },
   UI: {
-    Button,
-    GridBackground,
     Input,
     PageTransition,
-    Spinner,
+    OptionSelector,
+    BottomModal
   },
 }

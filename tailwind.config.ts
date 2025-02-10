@@ -10,11 +10,18 @@ export default {
  ],
  theme: {
  	extend: {
+		scale: {
+			'101': '1.01',
+		},
  		colors: {
  			cyan: {
  				'500': '#06B6D4',
  				'700': '#0E7490'
  			},
+			 octor: {
+				'400': '#D19EBF',
+				'500': '#9B5A89'
+			},
  			background: {
  				light: '#F5F5F5',
  				dark: '#121212'
@@ -71,6 +78,14 @@ export default {
  			sm: 'calc(var(--radius) - 4px)'
  		},
  		keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
  			'accordion-down': {
  				from: {
  					height: '0'

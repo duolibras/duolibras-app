@@ -21,10 +21,6 @@ body {
     --primary: 186 94% 82%;
     --border: 215 25% 27%;
   }
-
-  h1, h2, h3, h4 {
-    @apply text-text-light dark:text-text-dark;
-  }
 }
 
 @layer utilities {
