@@ -4,7 +4,6 @@ export enum ModuleType {
 }
 
 export interface Module {
-  id: string;
   type: ModuleType;
   contentId?: string; // Presente se o tipo for CONTENT
   questionId?: string; // Presente se o tipo for QUESTION
