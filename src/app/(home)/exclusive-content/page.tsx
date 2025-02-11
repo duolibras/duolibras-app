@@ -1,4 +1,4 @@
-import { CourseContent } from "./components/course-content"
+import { CourseContent } from "./components/exclusive-content"
 
 export default function HomeContent() {
   return (
