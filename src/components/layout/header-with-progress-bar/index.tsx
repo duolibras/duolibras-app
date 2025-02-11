@@ -2,12 +2,13 @@
 
 import React from "react"
 
-import { CloseButton } from "./components/close-button"
 import { BottomModal } from "@/components/ui/bottom-modal"
+import { CloseButton } from "./components/close-button"
 
+import { Progress } from "@/components/ui/progress"
 import { useRouter } from "next/navigation"
 
-export const HeaderProgress = () => {
+export const HeaderProgress = ({ progress }: { progress: number }) => {
   const router = useRouter()
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -16,14 +17,18 @@ export const HeaderProgress = () => {
     closeModal();
   }
 
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
   const closeModal = () => {
     setIsOpen(false);
   }
 
   return (
-    <header className="flex items-center gap-4">
-      <CloseButton onClose={closeModal} />
-      <div className="w-96 bg-gray-200 h-8 rounded-2xl" />
+    <header className="flex items-center w-full gap-4 px-6">
+      <CloseButton onClose={openModal} />
+      <Progress value={progress} />
       <BottomModal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Deseja sair?" subtitle="Seu progresso será perdido se você sair agora" primaryButton={{ label: "CONTINUAR", action: () => setIsOpen(false) }} secondaryButton={{ label: "QUERO SAIR", action: leaveThePage }} />
     </header>
   )

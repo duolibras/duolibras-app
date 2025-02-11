@@ -2,7 +2,9 @@
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Chapter as IChapter, Status } from "@/domains/journey/api/@types";
+import { useNavigation } from "@/hooks/use-navigation";
 import { cn } from "@/lib/utils";
+import { useStore } from "@/shared/store/use-store";
 import { Play } from "lucide-react";
 import { useState } from "react";
 
@@ -12,13 +14,26 @@ interface IProps {
 }
 
 export function Chapter({ chapter, index }: IProps) {
+  const { setChapter } = useStore();
   const [disabled] = useState(() => chapter.status === Status.UNAVAILABLE);
+  const navigation = useNavigation();
+
+  function handleClick() {
+    if (disabled) return;
+
+    setChapter(chapter)
+
+    navigation.toChapter();
+  }
   
   return (
-    <div className={cn(
-      "w-full border-solid border-cyan-500 border h-full px-4 py-4 justify-between flex flex-col z-50 rounded-xl overflow-hidden relative transition-all space-y-2",
-      !disabled && 'cursor-pointer hover:scale-101'
-    )}>
+    <div 
+      onClick={handleClick}
+      className={cn(
+        "w-full border-solid border-cyan-500 border h-full px-4 py-4 justify-between flex flex-col z-50 rounded-xl overflow-hidden relative transition-all space-y-2",
+        !disabled && 'cursor-pointer hover:scale-101'
+      )}
+      >
       <div className="flex w-full justify-between">
         <div className="flex flex-col gap-2">
           <span 

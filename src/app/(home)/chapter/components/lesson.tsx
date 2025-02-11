@@ -1,6 +1,11 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { Lesson as ILesson, Status } from "@/domains/journey/api/@types";
+import { useNavigation } from "@/hooks/use-navigation";
 import { cn } from "@/lib/utils";
+import { modulesLessons1 } from "@/shared/store/mocks/modules";
+import { useStore } from "@/shared/store/use-store";
 import { Play } from "lucide-react";
 
 interface IProps {
@@ -12,14 +17,29 @@ interface IProps {
 }
 
 export function Lesson({ lesson, first, last, index, disabled }: IProps) {
+  const navigation = useNavigation();
+  const { setModules } = useStore();
+
+  function handleClick() {
+    if (disabled) return;
+
+    setModules(modulesLessons1);
+
+    navigation.toLesson();
+  }
+
   return (
-    <div key={lesson.id} className={cn(
-      "flex gap-6 justify-between items-center transition-all",
-    )}>
+    <div 
+      key={lesson.id} 
+      onClick={handleClick}
+      className={cn(
+        "flex gap-6 justify-between items-center transition-all",
+      )}
+    >
       <div className="relative flex flex-col items-center justify-center h-full">
         <div
           className={cn(
-            "w-16 h-16 rounded-full border-2 border-solid border-cyan-500 shrink-0 z-10 bg-white",
+            "w-16 h-16 rounded-full border-2 border-solid border-cyan-500 shrink-0 z-10 bg-cyan-50",
             !first && 'mt-4',
             !last && 'mb-4',
             lesson.status === Status.AVAILABLE && 'scale-125 border-4'

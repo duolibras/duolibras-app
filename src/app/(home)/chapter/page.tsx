@@ -2,33 +2,46 @@
 
 import { Button } from "@/components/ui/button";
 import { Status } from "@/domains/journey/api/@types";
+import { useNavigation } from "@/hooks/use-navigation";
 import { useStore } from "@/shared/store/use-store";
 import { ChevronLeft } from "lucide-react";
+import { Fire, Hearts, Money } from "../components/journey-header";
 import { Lesson } from "./components/lesson";
 
 export default function Chapter() {
   const { chapter } = useStore();
+  const navigation = useNavigation();
 
   if (!chapter) return;
 
+  function handleGoBack() {
+    navigation.goBack();
+  }
+
   return (
     <div className="h-full">
-      <header className="px-6 py-10 flex flex-col items-center">
-        <div className="flex justify-between w-full">
-          <ChevronLeft />
+      <header className="px-6 pb-10 pt-6 gap-6 flex flex-col items-center bg-cyan-500/20">
+        <div className="flex justify-between items-center w-full">
+          <div className="cursor-pointer" onClick={handleGoBack}>
+            <ChevronLeft />
+          </div>
 
-          <div className="flex gap-2 font-bold tracking-wider text-lg">
-            <span className="text-amber-500">500</span>
-            <span className="text-red-500">5</span>
+          <div className="flex gap-4 font-bold tracking-wider text-lg">
+            <Money />
+            <Fire />
+            <Hearts />
           </div>
         </div>
 
-        <h1 className="text-3xl font-medium">{chapter.name}</h1>
-        <span className="text-xl">{chapter.description}</span>
+        <div className="flex items-center flex-col">
+          <h1 className="text-3xl font-medium">{chapter.name}</h1>
+          <span className="text-xl">{chapter.description}</span>
+        </div>
+
 
         {/* <Image src="" alt="" /> */}
       </header>
-      <main className="px-6 h-full">
+      <main className="p-6 h-full">
         {chapter.lessons.map((lesson, index) => (
           <Lesson 
             key={lesson.id}

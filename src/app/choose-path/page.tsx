@@ -1,15 +1,15 @@
+import { Assets } from "@/shared/images";
 import Image from "next/image";
 import { FrameMotionLateral } from "../(onboarding)/componets/frame-motion-lateral";
 import { OnboardingHeader } from "../(onboarding)/componets/onboarding-header";
-import { Assets } from "@/shared/images";
 
 export default function ChoosePathScreen() {
   return (
     <FrameMotionLateral>
-      <div className="w-full flex flex-col items-center justify-between h-fit max-w-lg mx-auto bg-white py-6">
+      <div className="w-full flex flex-col items-center justify-start h-screen max-w-lg mx-auto bg-white py-6">
         <OnboardingHeader />
 
-        <main>
+        <main className="h-full flex justify-center flex-col">
           <h2 className="w-80 text-center text-gray-700 text-2xl font-bold my-6">Escolha seu caminho</h2>
           <section className="flex flex-col gap-4">
             <div className="flex flex-col items-center  justify-center p-8 border-2 border-gray-200 rounded-xl space-y-2 hover:border-cyan-500 cursor-pointer transition-all duration-400 ease-in hover:scale-101">
