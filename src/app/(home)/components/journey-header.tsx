@@ -44,9 +44,11 @@ export function Hearts() {
 
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Você está com a vida cheia!</DrawerTitle>
+          <DrawerTitle>
+            Você está com a vida cheia!
+          </DrawerTitle>
 
-          <div className="w-full flex gap-4 justify-center">
+          <div className="w-full flex gap-4 py-4 justify-center">
             <Heart />
             <Heart />
             <Heart />
@@ -56,14 +58,25 @@ export function Hearts() {
         </DrawerHeader>
 
         <DrawerFooter>
-          <Button variant="secondary" className="h-12 bg-gradient-to-br from-purple-400 to-purple-600">
-            <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
-            VIDAS ILIMITADAS
+          <Button variant="secondary" className="py-7 bg-gradient-to-br flex justify-between from-purple-400 to-purple-600">
+            <div className="flex gap-2  items-center">
+              <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
+              VIDAS ILIMITADAS
+            </div>
+            <div>
+              <span className="uppercase tracking-wide font-medium">Teste grátis</span>
+            </div>
           </Button>
 
-          <Button className="h-12 bg-gradient-to-br from-cyan-500 to-cyan-700" >
-            <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
-            RECUPERAR VIDAS
+          <Button className="py-7 bg-gradient-to-br from-cyan-500 to-cyan-700 flex justify-between" >
+            <div className="flex gap-2 items-center">
+                <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
+                RECUPERAR VIDAS
+            </div>
+            <div className="flex gap-2 items-center">
+              <Image src={Assets.SVG.Money} alt="Moedas" />
+              <span className="font-bold tracking-wide">500</span>
+            </div>
           </Button>
         </DrawerFooter>
       </DrawerContent>

@@ -7,7 +7,6 @@ import { JourneyProvider } from "@/domains/journey/context/journey-context";
 import { ReactQueryProvider } from "@/shared/providers/react-query-provider";
 
 import { Toaster } from 'sonner';
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "./globals.css";
 
@@ -31,7 +30,7 @@ export default function RootLayout({
               {children}
             </JourneyProvider>
           </AuthProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
+          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </ReactQueryProvider>
       </body>
     </html>

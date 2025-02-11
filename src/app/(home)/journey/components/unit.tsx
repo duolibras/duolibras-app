@@ -11,8 +11,8 @@ export function Unit({ unit, index }: IProps) {
   return (
     <div>
       <div className="bg-cyan-500 px-6 py-10">
-        <h2 className="text-white text-lg font-bold">{unit.name}</h2>
-        <span className="text-white">Unidade {index}</span>
+        <h2 className="text-white text-3xl font-bold">{unit.name}</h2>
+        <span className="text-white text-lg">Unidade {index}</span>
       </div>
       <div className="px-6 py-4 space-y-4">
         {unit.chapters.map((chapter, index) => (

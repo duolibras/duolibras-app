@@ -30,16 +30,16 @@ export function Chapter({ chapter, index }: IProps) {
     <div 
       onClick={handleClick}
       className={cn(
-        "w-full border-solid border-cyan-500 border h-full px-4 py-4 justify-between flex flex-col z-50 rounded-xl overflow-hidden relative transition-all space-y-2",
-        !disabled && 'cursor-pointer hover:scale-101'
+        "w-full border-solid border-cyan-500/20 border-2 h-full px-4 py-4 justify-between flex flex-col z-50 rounded-xl overflow-hidden relative transition-all space-y-2",
+        !disabled && 'cursor-pointer hover:scale-101 hover:border-cyan-500'
       )}
       >
       <div className="flex w-full justify-between">
         <div className="flex flex-col gap-2">
           <span 
             className={cn(
-              "text-sm bg-cyan-500/20 px-2 font-medium py-1 rounded-full block w-fit tracking-wide",
-              disabled && 'bg-cyan-500/5'
+              "text-sm text-white bg-cyan-500 px-3 font-medium py-1 rounded-full block w-fit tracking-wide",
+              disabled && 'bg-cyan-500/50'
             )}
           >
             Capítulo {index}
@@ -49,7 +49,7 @@ export function Chapter({ chapter, index }: IProps) {
             <strong className="text-base tracking-wide font-bold">
               {chapter.name}
             </strong>
-            <p className="text-sm">{chapter.description}</p>
+            <p className="text-sm text-gray-500">{chapter.description}</p>
           </div>
 
         </div>
@@ -60,8 +60,8 @@ export function Chapter({ chapter, index }: IProps) {
           </Button>
         </div>
       </div>
-      <div className="space-y-1">
-        <span className="text-xs">
+      <div className="space-y-2">
+        <span className="text-xs text-gray-500">
           {chapter.lessonsAccomplished} de {chapter.lessonsCount} lições concluídas
         </span>
         <Progress 

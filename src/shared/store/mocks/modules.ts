@@ -7,11 +7,11 @@ export const modulesLessons1 = [
   },
   {
     type: ModuleType.QUESTION,
-    contentId: '2'
+    questionId: '2'
   },
   {
     type: ModuleType.QUESTION,
-    contentId: '3'
+    questionId: '3'
   },
   {
     type: ModuleType.CONTENT,

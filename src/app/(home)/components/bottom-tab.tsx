@@ -1,12 +1,14 @@
 "use client"
 
-import Image from "next/image"
+import Image from "next/image";
 import { useState } from "react";
 
-import { Assets } from "@/shared/images"
 import { Button } from "@/components/ui/button";
+import { Assets } from "@/shared/images";
+import { useRouter } from "next/navigation";
 
 export function BottomTab() {
+  const route = useRouter();
   const [selected, setSelected] = useState({
     trilha: true,
     content: false
@@ -27,6 +29,12 @@ export function BottomTab() {
       trilha: tab === "trilha" && !selected.trilha,
       content: tab === "content" && !selected.content
     })
+
+    if (tab === 'trilha') {
+      route.push('journey')
+    } else {
+      route.push('exclusive-content')
+    }
   }
 
   return (

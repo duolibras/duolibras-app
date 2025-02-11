@@ -14,18 +14,20 @@ interface IProps {
 export function LessonContent({ modules }: IProps) {
   const [step, setStep] = useState<number>(0);
 
-  const modulee = useMemo(() => modules[step], [modules, step]);
+  const currentModule = useMemo(() => modules[step], [modules, step]);
 
   return (
     <div>
       <LessonHeader step={step} totalSteps={modules.length} />
         {
-          modulee.type === ModuleType.CONTENT
+          currentModule.type === ModuleType.CONTENT
             ? <Content 
-                key={modulee.contentId!} 
+                key={currentModule.contentId!}
+                contentId={currentModule.contentId!} 
               />
             : <Question 
-                key={modulee.questionId!} 
+                key={currentModule.questionId!} 
+                questionId={currentModule.questionId!}
               />
         }
   
