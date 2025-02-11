@@ -17,7 +17,8 @@ export const Header = () => {
         </SheetTrigger>
         <SheetContent side="left">
           <SheetHeader>
-            <SheetTitle>Faça parte do futuro da educação</SheetTitle>
+            <br />
+            <SheetTitle className="text-2xl text-gray-700">Faça parte do futuro da educação</SheetTitle>
             {/* <SheetDescription>
               This action cannot be undone. This will permanently delete your account
               and remove your data from our servers.
@@ -25,7 +26,7 @@ export const Header = () => {
           </SheetHeader>
 
           <div className="w-full fixed bottom-4">
-            <Button className="w-80 flex justify-center items-center gap-4 bg-transparent border border-gray-300 text-gray-800 hover:border-sky-500 hover:bg-transparent transition-all duration-400">
+            <Button className="w-80 flex justify-center items-center gap-4 bg-transparent border-2 border-gray-300 text-gray-800 hover:border-sky-300 hover:bg-transparent transition-all duration-400">
               <LogOut />
               Sair
             </Button>
