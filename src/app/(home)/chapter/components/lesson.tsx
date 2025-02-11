@@ -1,0 +1,58 @@
+import { Button } from "@/components/ui/button";
+import { Lesson as ILesson, Status } from "@/domains/journey/api/@types";
+import { cn } from "@/lib/utils";
+import { Play } from "lucide-react";
+
+interface IProps {
+  lesson: ILesson;
+  first: boolean;
+  last: boolean;
+  index: number;
+  disabled?: boolean;
+}
+
+export function Lesson({ lesson, first, last, index, disabled }: IProps) {
+  return (
+    <div key={lesson.id} className={cn(
+      "flex gap-6 justify-between items-center transition-all",
+    )}>
+      <div className="relative flex flex-col items-center justify-center h-full">
+        <div
+          className={cn(
+            "w-16 h-16 rounded-full border-2 border-solid border-cyan-500 shrink-0 z-10 bg-white",
+            !first && 'mt-4',
+            !last && 'mb-4',
+            lesson.status === Status.AVAILABLE && 'scale-125 border-4'
+          )}
+        ></div>
+        
+        <span 
+          className={cn(
+            "-z-10 absolute block w-3 h-full bg-cyan-500",
+            !last && '-bottom-10',
+            !first && '-top-10',
+          )}
+        />
+      </div>
+
+      <div className={cn(
+        "w-full p-4 bg-cyan-500/5 rounded-3xl flex items-center justify-between border border-solid border-cyan-500 transition-all",
+        !first && 'mt-4',
+        !last && 'mb-4',
+        !disabled && 'cursor-pointer hover:scale-101'
+      )}>
+        <div>
+          <h2 className="font-bold">Lição {index + 1}</h2>
+          <span className="text-sm">{lesson.name}</span>
+        </div>
+
+        <div>
+          <Button disabled={disabled} size="icon" className="rounded-full">
+            <Play className="fill-white" />
+          </Button>
+
+        </div>
+      </div>
+    </div>
+  );
+}

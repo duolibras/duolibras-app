@@ -17,6 +17,7 @@ export type Chapter = {
   name: string;
   description: string;
   lessonsCount: number;
+  lessonsAccomplished: number;
   status: Status;
   lessons: Lesson[];
 }
@@ -25,6 +26,7 @@ export type Unit = {
   id: string;
   name: string;
   chaptersCount: number;
+  chaptersAccomplished: number;
   status: Status;
   chapters: Chapter[];
 }

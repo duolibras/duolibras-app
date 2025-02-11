@@ -11,6 +11,7 @@ import Shine from '@/assets/images/shine.svg';
 import SocialMedia from '@/assets/images/social-media.svg';
 import Splash from '@/assets/images/splash.svg';
 import TrilhaIcon from '@/assets/images/trilha.svg';
+import Unit1 from '@/assets/images/unit1.svg';
 import University from '@/assets/images/university.svg';
 
 export const Assets = {
@@ -27,7 +28,8 @@ export const Assets = {
     SocialMedia,
     Splash,
     TrilhaIcon,
-    University
+    University,
+    Unit1,
   },
   PNG: {
     Octor,
