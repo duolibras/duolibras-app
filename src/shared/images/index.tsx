@@ -1,8 +1,14 @@
 import ContentIcon from '@/assets/images/content.svg';
 import Dolphin from '@/assets/images/dolphin.svg';
+import Fire from '@/assets/images/fire.svg';
 import Friends from '@/assets/images/friends.svg';
 import Gold from '@/assets/images/gold.svg';
+import HeartDisabled from '@/assets/images/heart-disabled.svg';
+import HeartInfinity from '@/assets/images/heart-infinity.svg';
+import HeartOutline from '@/assets/images/heart-outline.svg';
+import Heart from '@/assets/images/heart.svg';
 import Mascote from '@/assets/images/mascote.svg';
+import Money from '@/assets/images/money.svg';
 import Octor from '@/assets/images/octor.png';
 import Other from '@/assets/images/other.svg';
 import ProphinParaLadoDireito from '@/assets/images/prophin-olhando-para-direita.svg';
@@ -11,6 +17,7 @@ import Shine from '@/assets/images/shine.svg';
 import SocialMedia from '@/assets/images/social-media.svg';
 import Splash from '@/assets/images/splash.svg';
 import TrilhaIcon from '@/assets/images/trilha.svg';
+import Unit1 from '@/assets/images/unit1.svg';
 import University from '@/assets/images/university.svg';
 
 export const Assets = {
@@ -27,7 +34,14 @@ export const Assets = {
     SocialMedia,
     Splash,
     TrilhaIcon,
-    University
+    University,
+    Unit1,
+    Fire,
+    Heart,
+    HeartDisabled,
+    Money,
+    HeartOutline,
+    HeartInfinity,
   },
   PNG: {
     Octor,

@@ -1,17 +1,17 @@
 "use client"
+import { Assets } from "@/shared/images";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FrameMotionLateral } from "../componets/frame-motion-lateral";
 import { OnboardingHeader } from "../componets/onboarding-header";
-import { Assets } from "@/shared/images";
 import SpeechBubble from "../componets/speech-bubble";
 import { all_button_primary_style } from "../componets/style";
-import { useRouter } from "next/navigation";
 
 export default function ProphinDialogScreen() {
   const navigation = useRouter();
     
   function onNextPage() {
-    navigation.push('lead-source')
+    navigation.push('questions')
   }
   
   return (
