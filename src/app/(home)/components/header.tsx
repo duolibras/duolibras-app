@@ -1,12 +1,42 @@
+"use client"
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Menu, Search } from "lucide-react"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { LogOut, Menu, Search } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export const Header = () => {
+  const navigation = useRouter();
+
   return (
     <header className="w-full flex justify-start items-center gap-4">
         <div className="flex items-center gap-4">
-        <Menu className="text-gray-300 hover:text-sky-500 cursor-pointer transition-all duration-400 ease-in-out"/>
-        <p className="text-2xl font-bold text-center bg-gradient-to-r from-cyan-500 to-cyan-700 bg-clip-text text-transparent">DuoLibras</p>
+        <Sheet>
+        <SheetTrigger>
+            <Menu className="text-gray-300 hover:text-sky-500 cursor-pointer transition-all duration-400 ease-in-out"/>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <SheetHeader>
+            <SheetTitle>Faça parte do futuro da educação</SheetTitle>
+            {/* <SheetDescription>
+              This action cannot be undone. This will permanently delete your account
+              and remove your data from our servers.
+            </SheetDescription> */}
+          </SheetHeader>
+
+          <div className="w-full fixed bottom-4">
+            <Button className="w-80 flex justify-center items-center gap-4 bg-transparent border border-gray-300 text-gray-800 hover:border-sky-500 hover:bg-transparent transition-all duration-400">
+              <LogOut />
+              Sair
+            </Button>
+          </div>
+        </SheetContent>
+        </Sheet>
+        <button className="cursor-pointer" onClick={() => {
+          navigation.push("/exclusive-content")
+        }}>
+          <p className="text-2xl font-bold text-center bg-gradient-to-r from-cyan-500 to-cyan-700 bg-clip-text text-transparent">DuoLibras</p>
+        </button>
         </div>
         <div className="w-full py-4 px-2 bg-gray-50 rounded-lg relative">
           <Search size={16} className="text-gray-400 absolute top-3" />
