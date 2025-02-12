@@ -1,5 +1,6 @@
 "use strict"
 
+import React from "react";
 import type { Metadata } from "next";
 
 import { AuthProvider } from "@/domains/auth/context/auth-context";
@@ -22,6 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Duolibras" />
+        <meta name="application-name" content="Duolibras" />
+        <meta name="description" content="Aprenda libras de maneira divertida e interativa com IA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className="font-sans bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors">
         <Toaster position="bottom-center" />
         <ReactQueryProvider>
@@ -30,7 +37,6 @@ export default function RootLayout({
               {children}
             </JourneyProvider>
           </AuthProvider>
-          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </ReactQueryProvider>
       </body>
     </html>
