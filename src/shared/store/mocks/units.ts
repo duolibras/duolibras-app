@@ -18,5 +18,4 @@ export const units = [
     chaptersAccomplished: 3,
     status: Status.AVAILABLE,
   },
-  }
 ];
