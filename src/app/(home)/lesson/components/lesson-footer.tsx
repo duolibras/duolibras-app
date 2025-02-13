@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { InteractButton } from "@/components/ui/interactive-button";
 
 interface IProps {
   selected: boolean;
@@ -8,7 +8,9 @@ interface IProps {
 export function LessonFooter({ selected, onContinue }: IProps) {
   return (
     <footer className="fixed bottom-0 w-full p-6 z-20">
-      <Button className="w-full h-12" onClick={onContinue} disabled={!selected}>Continuar</Button>
+      <InteractButton onClick={onContinue} disabled={!selected}>
+        Continuar
+      </InteractButton>
     </footer>
   )
 }

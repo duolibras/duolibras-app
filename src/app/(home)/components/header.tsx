@@ -26,7 +26,7 @@ export const Header = () => {
           </SheetHeader>
 
           <div className="w-full fixed bottom-4">
-            <Button className="w-80 flex justify-center items-center gap-4 bg-transparent border-2 border-gray-300 text-gray-800 hover:border-sky-300 hover:bg-transparent transition-all duration-400">
+            <Button className="w-full flex justify-center items-center gap-4 bg-transparent border-2 border-gray-300 text-gray-800 hover:border-sky-300 hover:bg-transparent transition-all duration-400">
               <LogOut />
               Sair
             </Button>

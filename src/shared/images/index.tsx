@@ -1,12 +1,16 @@
+import BlockPractice from '@/assets/images/block-practice.svg';
+import BlockReview from '@/assets/images/block-review.svg';
 import ContentIcon from '@/assets/images/content.svg';
 import Dolphin from '@/assets/images/dolphin.svg';
 import Fire from '@/assets/images/fire.svg';
 import Friends from '@/assets/images/friends.svg';
 import Gold from '@/assets/images/gold.svg';
+import Hands from '@/assets/images/hands.svg';
 import HeartDisabled from '@/assets/images/heart-disabled.svg';
 import HeartInfinity from '@/assets/images/heart-infinity.svg';
 import HeartOutline from '@/assets/images/heart-outline.svg';
 import Heart from '@/assets/images/heart.svg';
+import Magnifier from '@/assets/images/magnifier.svg';
 import Mascote from '@/assets/images/mascote.svg';
 import Money from '@/assets/images/money.svg';
 import Octor from '@/assets/images/octor.png';
@@ -42,6 +46,10 @@ export const Assets = {
     Money,
     HeartOutline,
     HeartInfinity,
+    Magnifier,
+    Hands,
+    BlockPractice,
+    BlockReview,
   },
   PNG: {
     Octor,

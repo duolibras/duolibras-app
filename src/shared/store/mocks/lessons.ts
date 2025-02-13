@@ -20,7 +20,7 @@ export const lessonsUnit1 = [
     chapterId: '2',
     name: 'Pratique dialogo',
     modulesCount: 5,
-    status: Status.UNAVAILABLE
+    status: Status.UNAVAILABLE,
   },
   {
     id: '4',
