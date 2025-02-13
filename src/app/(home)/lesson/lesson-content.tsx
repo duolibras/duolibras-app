@@ -51,7 +51,7 @@ export function LessonContent() {
               />
         }
   
-      <LessonFooter type={currentModule.type} selected={currentModule.type === ModuleType.CONTENT || !!selected} onContinue={handleContinue} />
+      <LessonFooter type={currentModule.type} selected={currentModule.type === ModuleType.CONTENT || !!selected || currentModule.questionId === '5'} onContinue={handleContinue} />
     </div>
   );
 }

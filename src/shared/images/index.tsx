@@ -24,6 +24,8 @@ import Splash from '@/assets/images/splash.svg';
 import TrilhaIcon from '@/assets/images/trilha.svg';
 import Unit1 from '@/assets/images/unit1.svg';
 import University from '@/assets/images/university.svg';
+import Metadata from '@/assets/tm-model/metadata.json';
+import Model from '@/assets/tm-model/model.json';
 
 export const Assets = {
   SVG: {
@@ -55,5 +57,9 @@ export const Assets = {
   PNG: {
     Octor,
     Logo,
+  },
+  TM: {
+    model: Model,
+    metadata: Metadata,
   }
 }
