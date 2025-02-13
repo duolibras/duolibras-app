@@ -10,8 +10,10 @@ export function useNavigation() {
     toLogin: () => router.push('/login'),
     toRegister: () => router.push('/register'),
     toDashboard: () => router.push('/dashboard'),
+    toJourney: () => router.push('/journey'),
     toChapter: () => router.push('/chapter'),
     toLesson: () => router.push('/lesson'),
+    toLessonComplete: () => router.push('/lesson-completed'),
     goBack: () => router.back(),
   };
 }

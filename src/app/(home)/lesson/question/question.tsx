@@ -13,7 +13,7 @@ export function Question({ questionId }: IProps) {
   const question = questions[questionId];
   
   return (
-    <div className="w-full flex flex-col items-center h-screen gap-2">
+    <div className="w-full flex flex-col items-center h-full gap-2">
       <h1 className="text-xl font-medium">{question.name}</h1>
       {question.type === QuestionType.SINGLE_CHOICE && (
         <div className="w-full">
@@ -30,11 +30,17 @@ export function Question({ questionId }: IProps) {
           </div>
         </div>
       )}
-      <p>{question.description}</p>
+      <p className="text-gray-600 mb-10">{question.description}</p>
 
       <div className="w-full flex flex-col gap-4 px-10">
         {question.answers.map((answer) => (
-          <Button variant="outline" key={answer.id}>{answer.description}</Button>
+          <Button 
+            key={answer.id}
+            variant="outline" 
+            className="py-6 border-cyan-500 rounded-3xl text-lg font-medium"
+          >
+            {answer.description}
+          </Button>
         ))}
       </div>
     </div>
