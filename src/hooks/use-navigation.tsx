@@ -13,6 +13,7 @@ export function useNavigation() {
     toJourney: () => router.push('/journey'),
     toChapter: () => router.push('/chapter'),
     toLesson: () => router.push('/lesson'),
+    toLessonComplete: () => router.push('/lesson-completed'),
     goBack: () => router.back(),
   };
 }
