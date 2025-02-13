@@ -15,6 +15,7 @@ export interface Content {
   description: string;
   videoUrl: string;
   lessonId: string;
+  welcome?: boolean;
 }
 
 export enum QuestionType {

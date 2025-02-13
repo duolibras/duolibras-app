@@ -9,6 +9,7 @@ import { LessonFooter } from "./components/lesson-footer";
 import { LessonHeader } from "./components/lesson-header";
 import { Content } from "./content/content";
 import { Question } from "./question/question";
+import { questions } from "@/shared/store/mocks/questions";
 
 
 export function LessonContent() {
@@ -16,6 +17,7 @@ export function LessonContent() {
     const navigation = useNavigation();
 
   const [step, setStep] = useState<number>(0);
+  const [selected, setSelected] = useState("");
   const currentModule = useMemo(() => modules[step], [modules, step]);
 
 
@@ -24,6 +26,7 @@ export function LessonContent() {
   }
 
   function handleContinue() {
+    setSelected("");
     if (step + 1 < modules.length) {
       setStep(step + 1)
     } else {
@@ -43,10 +46,12 @@ export function LessonContent() {
             : <Question 
                 key={currentModule.questionId!} 
                 questionId={currentModule.questionId!}
+                selected={questions[currentModule.questionId!].answers.find(answer => answer.id === selected)?.id || ""}
+                onSelected={setSelected}
               />
         }
   
-      <LessonFooter onContinue={handleContinue} />
+      <LessonFooter selected={currentModule.type === ModuleType.CONTENT || !!selected} onContinue={handleContinue} />
     </div>
   );
 }

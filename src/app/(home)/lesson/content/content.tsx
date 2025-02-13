@@ -13,11 +13,15 @@ export function Content({ contentId }: IProps) {
       <h1 className="text-xl font-medium">{content.name}</h1>
       <div className="w-full">
         <AspectRatio ratio={16/9}>
-          <div className="w-full h-full bg-cyan-100"></div>
+          <video autoPlay loop>
+            <source src={content.videoUrl} type="video/mp4" />
+          </video>
         </AspectRatio>
       </div>
 
-      <h1>{content.description}</h1>
+      <div className={`${!content.welcome ? 'border-2 border-cyan-200 rounded-lg hover:border-cyan-300 cursor-pointer transition-all duration-300' : ''} mx-4 px-4 py-2`}>
+        <h4 className={`${!content.welcome ? 'text-xl' : 'text-md'} px-12 text-gray-500 text-center tracking-wide`}>{content.description}</h4>
+      </div>
     </div>
   )
 }
