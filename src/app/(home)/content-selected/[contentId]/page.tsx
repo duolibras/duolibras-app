@@ -29,9 +29,16 @@ export default function ContentSelected() {
             <div>
               <MiniCardContent selected key={contents[0].id} title={contents[0].title} description={contents[0].description} video={contents[0].video} />
               {
-                contents.map(content => (
-                  <MiniCardContent key={content.id} title={content.title} description={contents[0].description} video={contents[0].video} />
-                ))
+                contents.map(content => {
+                 {
+                    if (content.id === '1') {
+                      return;
+                    } else {
+                     return <MiniCardContent key={content.id} title={content.title} description={content.description} video={content.video} />
+                    }
+                    
+                 }
+                })
               }
            </div>
         </div>

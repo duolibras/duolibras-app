@@ -26,7 +26,7 @@ export const contents = [
   {
     id: '4',
     title: 'Origem da Língua Brasileira...',
-    description: 'Descubra a fascinante história da Libras...',
+    description: 'Descubra a fascinante história...',
     preview: 'Luiz Mendes',
     video: 'https://duolibras.s3.us-east-1.amazonaws.com/public/origem-libras.mp4',
     marketing: "Grátis"
