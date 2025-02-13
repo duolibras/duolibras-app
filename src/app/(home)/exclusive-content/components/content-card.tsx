@@ -1,6 +1,9 @@
+"use client";
+
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Curso from "@/assets/images/course.avif";
+import { useRouter } from "next/navigation";
 
 interface ContentCardProps {
   title?: string;
@@ -16,8 +19,11 @@ export const ContentCard = ({
   // profileImage,
   videosLength = 8,
 }: ContentCardProps) => {
+  const navigation = useRouter();
   return (  
-    <div className="min-w-80 border border-gray-100 rounded-lg cursor-pointer hover:border-2 hover:border-sky-200 transition-all duration-100 ease-in hover:scale-98">
+    <div className="min-w-80 border border-gray-100 rounded-lg cursor-pointer hover:border-2 hover:border-sky-200 transition-all duration-100 ease-in hover:scale-98" onClick={() => {
+      navigation.push("content-selected/1")
+    }}>
       <AspectRatio ratio={16 / 9} className="bg-muted">
         <Image
           src={Curso}

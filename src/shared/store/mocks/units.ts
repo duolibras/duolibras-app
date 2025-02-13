@@ -4,7 +4,7 @@ import { chaptersUnit1 } from "./chapters";
 export const units = [
   {
     id: '1',
-    name: 'Introdução a libras',
+    name: 'Conceitos básicos',
     chapters: chaptersUnit1,
     chaptersCount: 5,
     chaptersAccomplished: 3,
