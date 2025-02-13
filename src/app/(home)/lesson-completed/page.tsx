@@ -1,7 +1,7 @@
 "use client"
 import { FrameMotionLateral } from "@/app/(onboarding)/componets/frame-motion-lateral";
 import { OnboardingHeader } from "@/app/(onboarding)/componets/onboarding-header";
-import { all_button_primary_style } from "@/app/(onboarding)/componets/style";
+import { InteractButton } from "@/components/ui/interactive-button";
 import { useNavigation } from "@/hooks/use-navigation";
 import { Assets } from "@/shared/images";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default function LessonComplete() {
           </section>
         </main>
         <footer className="w-full flex flex-col gap-4 px-6">
-          <button className={all_button_primary_style} onClick={handleContinue}>Continue</button>
+          <InteractButton onClick={handleContinue}>Continue</InteractButton>
         </footer>
       </div>
     </FrameMotionLateral>

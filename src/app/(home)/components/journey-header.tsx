@@ -1,5 +1,8 @@
+"use client"
+
 import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { InteractButton } from "@/components/ui/interactive-button";
+import { useNavigation } from "@/hooks/use-navigation";
 import { cn } from "@/lib/utils";
 import { Assets } from "@/shared/images";
 import { LucideMenu, LucideX } from "lucide-react";
@@ -40,6 +43,12 @@ export function Heart({ disabled, small }: { disabled?: boolean, small?: boolean
 }
 
 export function Hearts() {
+  const navigation = useNavigation();
+
+  function handleSignature() {
+    navigation.toSignature();
+  }
+
   return (
     <Drawer>
       <DrawerTrigger>
@@ -65,7 +74,7 @@ export function Hearts() {
         </DrawerHeader>
 
         <DrawerFooter className="pb-10 gap-4">
-          <InteractButton variant="secondary" className="py-7 bg-gradient-to-br flex justify-between from-purple-400 to-purple-600 border-purple-600">
+          <InteractButton variant="secondary" className="py-7 bg-gradient-to-br flex justify-between from-purple-400 to-purple-600 border-purple-600" onClick={handleSignature}>
             <div className="flex gap-2  items-center">
               <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
               VIDAS ILIMITADAS

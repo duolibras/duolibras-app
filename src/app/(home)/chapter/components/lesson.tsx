@@ -69,7 +69,7 @@ export function Lesson({ lesson, first, last, index, disabled }: IProps) {
       )}>
         <div>
           <h2 className="font-bold">Lição {index + 1}</h2>
-          <span className="text-sm">{lesson.name}</span>
+          <span className="text-sm text-gray-600">{lesson.name}</span>
         </div>
 
         <div>
