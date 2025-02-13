@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { Assets } from '@/shared/images';
-import { all_button_primary_style } from '../../componets/style';
+import { InteractButton } from '@/components/ui/interactive-button';
 import { OptionSelector } from '@/components/ui/option-selector';
+import { Assets } from '@/shared/images';
 
 export const LeadSourceContent = ({ onNextPage }: { onNextPage: () => void }) => {
   const [selectedOption, setSelectedOption] = React.useState<string | null>(null);
@@ -45,13 +45,12 @@ export const LeadSourceContent = ({ onNextPage }: { onNextPage: () => void }) =>
       </main>
 
       <footer className="w-full flex flex-col px-4 gap-4">
-        <button
+        <InteractButton
           onClick={onNextPage}
           disabled={!selectedOption}
-          className={`${all_button_primary_style} ${!selectedOption && 'bg-gradient-to-r from-gray-300 to-gray-300 hover:from-gray-300 hover:to-gray-300'}`}
         >
           CONTINUAR
-        </button>
+        </InteractButton>
       </footer>
     </>
   )

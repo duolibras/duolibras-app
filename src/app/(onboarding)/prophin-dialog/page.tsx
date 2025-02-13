@@ -1,11 +1,11 @@
 "use client"
+import { InteractButton } from "@/components/ui/interactive-button";
 import { Assets } from "@/shared/images";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FrameMotionLateral } from "../componets/frame-motion-lateral";
 import { OnboardingHeader } from "../componets/onboarding-header";
 import SpeechBubble from "../componets/speech-bubble";
-import { all_button_primary_style } from "../componets/style";
 
 export default function ProphinDialogScreen() {
   const navigation = useRouter();
@@ -27,7 +27,7 @@ export default function ProphinDialogScreen() {
         </main>
 
         <footer className="w-full flex flex-col px-4 gap-4">
-          <button className={all_button_primary_style} onClick={onNextPage}>CONTINUAR</button>
+          <InteractButton onClick={onNextPage}>CONTINUAR</InteractButton>
         </footer>
       </div>
     </FrameMotionLateral>

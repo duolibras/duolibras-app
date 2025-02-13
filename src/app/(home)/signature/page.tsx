@@ -23,20 +23,20 @@ export default function SignaturePage() {
               Dolphin
             </span>
           </div>
-          <h1 className="font-bold text-3xl text-center text-gray-300">
+          <h1 className="font-bold text-2xl text-center text-gray-300">
             Quem usa <span className="text-gray-200">Dolphin</span> aprende mais rápido
           </h1>
         </div>
 
         <div className="rounded-t-full h-10 w-full bg-gray-100" />
 
-        <div className="absolute -bottom-10 left-10">
-          <Image src={Assets.PNG.Logo} alt="Logo duolibras" className="size-40" />
+        <div className="absolute -bottom-1 left-10">
+          <Image src={Assets.PNG.Logo} alt="Logo duolibras" className="size-24" />
         </div>
       </header>
 
-      <div className="px-8 flex flex-col h-full mt-12">
-        <div className="font-bold text-2xl space-y-8">
+      <div className="px-8 flex flex-col h-full mt-8">
+        <div className="font-bold text-lg space-y-6">
           <div className="flex gap-4 items-center text-gray-700">
             <LucideVideoOff className="text-cyan-500" size={40} />
             Sem anúncios
@@ -59,7 +59,7 @@ export default function SignaturePage() {
 
       <footer className="fixed bottom-0 w-full p-8">
         <div className="flex items-center justify-center flex-col space-y-4 w-full">
-        <span className="text-2xl text-gray-500 text-center">Cancele a qualquer hora, sem multas ou taxas</span>
+        <span className="text-sm text-gray-500 text-center">Cancele a qualquer hora, sem multas ou taxas</span>
 
           <InteractButton onClick={handleCancel} className="py-7">Experimente grátis por 7 dias</InteractButton>
           <Button onClick={handleCancel} className="text-lg font-bold text-cyan-500 py-6 w-full" variant="ghost">Agora não</Button>
