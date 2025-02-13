@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
+import { InteractButton } from "@/components/ui/interactive-button";
 import { cn } from "@/lib/utils";
 import { Assets } from "@/shared/images";
-import { LucideMenu } from "lucide-react";
+import { LucideMenu, LucideX } from "lucide-react";
 
 import Image from "next/image";
 
@@ -15,6 +15,13 @@ export function JourneyHeader() {
       <Hearts />
     </header>
   )
+}
+
+
+export function MenuClose() {
+  return (
+    <LucideX className="text-cyan-500 hover:text-cyan-700 cursor-pointer transition-all duration-400 ease-in-out"/>
+  );
 }
 
 export function Menu() {
@@ -36,7 +43,7 @@ export function Hearts() {
   return (
     <Drawer>
       <DrawerTrigger>
-        <span className="text-red-500 flex gap-1 items-center">
+        <span className="text-red-500 flex gap-1 items-center font-bold">
           <Heart small />
           5
         </span>
@@ -57,18 +64,18 @@ export function Hearts() {
           </div>
         </DrawerHeader>
 
-        <DrawerFooter>
-          <Button variant="secondary" className="py-7 bg-gradient-to-br flex justify-between from-purple-400 to-purple-600">
+        <DrawerFooter className="pb-10 gap-4">
+          <InteractButton variant="secondary" className="py-7 bg-gradient-to-br flex justify-between from-purple-400 to-purple-600 border-purple-600">
             <div className="flex gap-2  items-center">
               <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
               VIDAS ILIMITADAS
             </div>
             <div>
-              <span className="uppercase tracking-wide font-medium">Teste grátis</span>
+              <span className="uppercase tracking-wide font-bold">Teste grátis</span>
             </div>
-          </Button>
+          </InteractButton>
 
-          <Button className="py-7 bg-gradient-to-br from-cyan-500 to-cyan-700 flex justify-between" >
+          <InteractButton className="w-full py-7 bg-gradient-to-br from-cyan-500 to-cyan-700 flex justify-between" >
             <div className="flex gap-2 items-center">
                 <Image src={Assets.SVG.HeartInfinity} alt="coração com infinito" />
                 RECUPERAR VIDAS
@@ -77,7 +84,7 @@ export function Hearts() {
               <Image src={Assets.SVG.Money} alt="Moedas" />
               <span className="font-bold tracking-wide">500</span>
             </div>
-          </Button>
+          </InteractButton>
         </DrawerFooter>
       </DrawerContent>
 
