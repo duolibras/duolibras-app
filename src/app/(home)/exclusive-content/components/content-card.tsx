@@ -30,7 +30,7 @@ export const ContentCard = ({
       navigation.push(`content-selected/${id}`)
     }}>
       <AspectRatio ratio={16 / 9} className="bg-muted relative">
-        <video autoPlay={id === '1'} loop playsInline>
+        <video autoPlay preload="auto" loop playsInline>
           <source src={video} type="video/mp4" />
         </video>
         <span className="absolute bottom-2 right-2 px-4 py-1 bg-cyan-400 text-gray-100 tracking-wide rounded-2xl">{marketing}</span>

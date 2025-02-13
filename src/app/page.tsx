@@ -13,6 +13,10 @@ export default function WelcomeScreen() {
     navigation.push('prophin-apresentation')
   }
 
+  function onJourney() {
+    navigation.push('journey')
+  }
+
   return (
     <div className="flex flex-col items-center justify-between h-screen max-w-lg mx-auto bg-white py-6">
       <OnboardingHeader />
@@ -24,7 +28,7 @@ export default function WelcomeScreen() {
 
       <footer className="w-full flex flex-col px-6 gap-4">
         <InteractButton onClick={onNextPage}>COMEÇAR AGORA</InteractButton>
-        <Button variant="outline" className='py-6 text-cyan-500 font-bold rounded-xl'>JÁ POSSUO CONTA</Button>
+        <Button variant="outline" onClick={onJourney}  className='py-6 text-cyan-500 font-bold rounded-xl'>JÁ POSSUO CONTA</Button>
       </footer>
     </div>
   )

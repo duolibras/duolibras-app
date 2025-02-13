@@ -23,7 +23,7 @@ export function Question({ questionId, selected, onSelected }: IProps) {
       {question.type === QuestionType.SINGLE_CHOICE && (
         <div className="w-full">
           <AspectRatio ratio={16/9}>
-          <video autoPlay loop playsInline> 
+          <video autoPlay loop playsInline preload="auto"> 
             <source src={question.videoUrl!} type="video/mp4" />
           </video>
           </AspectRatio>

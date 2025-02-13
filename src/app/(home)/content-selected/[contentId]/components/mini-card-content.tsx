@@ -1,4 +1,4 @@
-import { AspectRatio } from "@radix-ui/react-aspect-ratio"
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
 export const MiniCardContent = ({
   selected = false,
