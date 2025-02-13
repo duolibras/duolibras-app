@@ -22,17 +22,17 @@ export const CourseContent = () => {
           <div className="flex items-center gap-4">
             {
               contents.map(content => (
-                <ContentCard key={content.id} id={content.id} title={content.title} creator={content.creator} video={content.video}  />
+                <ContentCard key={content.id} id={content.id} title={content.title} creator={content.creator} video={content.video} marketing={content.marketing} />
               ))
             }
           </div>
         </section>
         <section className="flex flex-col gap-4">
         {
-              [...contents].reverse().map(content => (
-                <ContentCard key={content.id} id={content.id} title={content.title} creator={content.creator} video={content.video}  />
-              ))
-            }
+          [...contents].reverse().map(content => (
+            <ContentCard key={content.id} id={content.id} title={content.title} creator={content.creator} video={content.video} marketing={content.marketing}  />
+          ))
+        }
         </section>
       </main>
       <BottomTab />
