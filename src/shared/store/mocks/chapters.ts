@@ -96,4 +96,3 @@ export const chaptersUnit2 = [
     status: Status.UNAVAILABLE
   }
 ]
-
