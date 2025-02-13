@@ -12,18 +12,18 @@ export const MiniCardContent = ({
   video: string;
 }) => {
   return (
-    <div className={`w-full h-24 ${selected && 'bg-sky-100'} px-4 py-2 cursor-pointer ${!selected && 'hover:bg-sky-50'} transition-all duration-300`}>
+    <div className={`w-full overflow-hidden ${selected && 'bg-sky-100'} px-4 py-2 cursor-pointer ${!selected && 'hover:bg-sky-50'} transition-all duration-300`}>
       <div className="w-full flex gap-4 justify-between">
-        <div className="min-w-32 max-w-32 w-full">
+        <div className="min-w-24 max-w-24 w-full">
           <AspectRatio ratio={16 / 9} className="w-full bg-muted">
-            <video>
+            <video playsInline autoPlay loop preload="auto">
               <source src={video!} type="video/mp4" />
             </video>
           </AspectRatio>
         </div>
-        <div className="h-fit w-full flex flex-col gap-2">
-          <h5 className="text-gray-800 ">{title}</h5>
-          <p className="text-gray-400 truncate">{description}</p>
+        <div className="w-full pr-4 flex flex-col gap-2">
+          <h5 className="text-gray-800 w-full">{title}</h5>
+          <p className="text-gray-400 truncate flex w-full">{description}</p>
         </div>
       </div>
     </div>
