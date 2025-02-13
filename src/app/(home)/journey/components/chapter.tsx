@@ -30,7 +30,7 @@ export function Chapter({ chapter, index }: IProps) {
     <div 
       onClick={handleClick}
       className={cn(
-        "w-full border-solid border-cyan-500/20 border-2 h-full px-4 py-4 justify-between flex flex-col z-50 rounded-xl overflow-hidden relative transition-all space-y-2",
+        "w-full border-solid border-cyan-500/20 border-2 h-full px-4 py-4 justify-between flex flex-col  rounded-xl overflow-hidden relative transition-all space-y-2",
         !disabled && 'cursor-pointer hover:scale-101 hover:border-cyan-500'
       )}
       >
@@ -38,7 +38,7 @@ export function Chapter({ chapter, index }: IProps) {
         <div className="flex flex-col gap-2">
           <span 
             className={cn(
-              "text-sm text-white bg-cyan-500 px-3 font-medium py-1 rounded-full block w-fit tracking-wide",
+              "text-sm text-white bg-cyan-500 px-3 font-medium py-1 rounded-full z-20 block w-fit tracking-wide",
               disabled && 'bg-cyan-500/50'
             )}
           >

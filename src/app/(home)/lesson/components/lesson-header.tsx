@@ -1,8 +1,9 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
+import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { InteractButton } from "@/components/ui/interactive-button";
 import { Progress } from "@/components/ui/progress";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Hearts, Menu, MenuClose } from "../../components/journey-header";
 
@@ -12,7 +13,12 @@ interface IProps {
 }
 
 export function LessonHeader({ step, totalSteps }: IProps) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+
+  function handleQuit() {
+    router.replace('/chapter');
+  }
 
   return (
     <div>
@@ -30,13 +36,15 @@ export function LessonHeader({ step, totalSteps }: IProps) {
               <DrawerTitle>Quer mesmo sair?</DrawerTitle>
             </DrawerHeader>
             <DrawerFooter>
-              <InteractButton>
-                Continuar aprendendo
-              </InteractButton>
-
-              <Button className="py-6 text-cyan-500 rounded-lg uppercase font-bold" variant="outline">
+              <DrawerClose asChild>
+                <InteractButton>
+                  Continuar aprendendo
+                </InteractButton>
+              </DrawerClose>
+              <Button onClick={handleQuit} className="py-6 text-cyan-500 rounded-lg uppercase font-bold" variant="outline">
                 Sair da lição
               </Button>
+
 
               <Button 
                 className="py-6 rounded-lg uppercase tracking-wide text-gray-500" 

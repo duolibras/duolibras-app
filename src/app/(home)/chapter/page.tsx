@@ -16,7 +16,7 @@ export default function Chapter() {
   if (!chapter) return;
 
   function handleGoBack() {
-    navigation.goBack();
+    navigation.toJourney();
   }
 
   return (
@@ -57,7 +57,7 @@ export default function Chapter() {
         </main>
 
         <footer className="fixed bottom-0 w-full p-6 z-20">
-          <InteractButton>Continuar</InteractButton>
+          <InteractButton onClick={() => navigation.toLesson()}>Continuar</InteractButton>
         </footer>
       </div>
     </PageSlide>

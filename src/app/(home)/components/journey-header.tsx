@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function JourneyHeader() {
   return (
-    <header className="flex w-full items-center justify-between py-2 px-6 fixed top-0 bg-white gap-6 font-bold tracking-wider text-base">
+    <header className="z-50 flex w-full items-center justify-between py-2 px-6 fixed top-0 bg-white gap-6 font-bold tracking-wider text-base">
       <Menu />
       <Fire />
       <Money />
