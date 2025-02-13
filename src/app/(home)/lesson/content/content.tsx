@@ -13,7 +13,7 @@ export function Content({ contentId }: IProps) {
       <h1 className="text-xl font-medium">{content.name}</h1>
       <div className="w-full">
         <AspectRatio ratio={16/9}>
-          <video autoPlay loop playsInline>
+          <video autoPlay loop playsInline preload="auto">
             <source src={content.videoUrl} type="video/mp4" />
           </video>
         </AspectRatio>

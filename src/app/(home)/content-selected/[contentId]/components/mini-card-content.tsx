@@ -15,7 +15,7 @@ export const MiniCardContent = ({
     <div className={`w-full h-24 ${selected && 'bg-sky-100'} px-4 py-2 cursor-pointer ${!selected && 'hover:bg-sky-50'} transition-all duration-300`}>
       <div className="w-full flex gap-4 justify-between">
         <AspectRatio ratio={16 / 9} className="w-full h-24 bg-muted">
-          <video>
+          <video preload="auto">
             <source src={video!} type="video/mp4" />
           </video>
         </AspectRatio>
