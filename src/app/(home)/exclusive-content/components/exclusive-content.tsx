@@ -1,6 +1,7 @@
 import { ContentCard } from "./content-card"
 import { Header } from "../../components/header"
 import { BottomTab } from "../../components/bottom-tab"
+import { contents } from "@/shared/store/mocks/content"
 
 export const CourseContent = () => {
   return (
@@ -19,17 +20,19 @@ export const CourseContent = () => {
         <section className="w-full py-6 overflow-scroll space-y-2">
           <h3 className="text-xl font-medium text-gray-800">Em destaque</h3>
           <div className="flex items-center gap-4">
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
+            {
+              contents.map(content => (
+                <ContentCard key={content.id} id={content.id} title={content.title} creator={content.creator} video={content.video}  />
+              ))
+            }
           </div>
         </section>
         <section className="flex flex-col gap-4">
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
+        {
+              [...contents].reverse().map(content => (
+                <ContentCard key={content.id} id={content.id} title={content.title} creator={content.creator} video={content.video}  />
+              ))
+            }
         </section>
       </main>
       <BottomTab />

@@ -6,34 +6,36 @@ import Curso from "@/assets/images/course.avif";
 import { useRouter } from "next/navigation";
 
 interface ContentCardProps {
+  id: string;
   title?: string;
   creator?: string;
   image?: string;
   profileImage?: string;
-  videosLength?: number;
+  video?: string;
+  marketing?: string
 }
+
 export const ContentCard = ({
+  id = "",
   title = "Aprenda Libras com a DuoLibras",
   creator = "Professor Carlos",
   // image,
   // profileImage,
-  videosLength = 8,
+  video = "",
+  marketing = ""
 }: ContentCardProps) => {
   const navigation = useRouter();
   return (  
-    <div className="min-w-80 border border-gray-100 rounded-lg cursor-pointer hover:border-2 hover:border-sky-200 transition-all duration-100 ease-in hover:scale-98" onClick={() => {
-      navigation.push("content-selected/1")
+    <div className="min-w-96 border border-gray-100 rounded-lg cursor-pointer hover:border-2 hover:border-sky-200 transition-all duration-100 ease-in hover:scale-98" onClick={() => {
+      navigation.push(`content-selected/${id}`)
     }}>
-      <AspectRatio ratio={16 / 9} className="bg-muted">
-        <Image
-          src={Curso}
-          alt="Photo by Drew Beamer"
-          fill
-          className="w-full rounded-t-md object-cover"
-        />
-        <span>{videosLength} aulas</span>
+      <AspectRatio ratio={16 / 9} className="bg-muted relative">
+        <video autoPlay={id === '1'} loop>
+          <source src={video} type="video/mp4" />
+        </video>
+        <span className="absolute bottom-2 right-2 px-4 py-1 bg-cyan-400 text-gray-100 tracking-wide rounded-2xl">{marketing}</span>
       </AspectRatio>
-      <div className="flex gap-4 p-4">
+      <div className="flex items-start gap-4 p-4">
         <Image
           src={Curso}
           alt="Photo by Drew Beamer"
@@ -42,8 +44,10 @@ export const ContentCard = ({
           className="size-10 overflow-hidden rounded-full object-cover"
         />
         <div>
-          <h3 className="text-gray-800 font-medium">{title}</h3>
-          <p className="text-gray-500 font-light ">{creator}</p>
+          <h3 className="text-gray-800 font-medium truncate">{title}</h3>
+          <div className="flex items-center justify-between">
+            <p className="text-gray-500 font-light">{creator}</p>
+          </div>
         </div>
       </div>
     </div>
