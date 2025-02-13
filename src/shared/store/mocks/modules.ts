@@ -27,6 +27,10 @@ export const modulesLessons1 = [
   },
   {
     type: ModuleType.QUESTION,
+    questionId: '5'
+  },
+  {
+    type: ModuleType.QUESTION,
     questionId: '7'
   },
 ]

@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { all_button_primary_style, all_button_secondary_style } from "../componets/style";
 import { FrameMotionLateral } from "../componets/frame-motion-lateral";
 import { OnboardingHeader } from "../componets/onboarding-header";
 
+import { Button } from "@/components/ui/button";
+import { InteractButton } from "@/components/ui/interactive-button";
 import { Assets } from '@/shared/images';
 
 export default function OnboardingCompletedScreen() {
@@ -33,8 +34,9 @@ export default function OnboardingCompletedScreen() {
         </main>
         <footer className="w-full flex flex-col gap-4 px-6">
           <p className="text-gray-400 text-sm font-medium text-center">para obter as moedas crie uma conta</p>
-          <button className={all_button_primary_style} onClick={onNextPage}>CRIAR CONTA AGORA</button>
-          <button className={all_button_secondary_style} onClick={onNextPage}>AGORA NÃO</button>
+          <InteractButton onClick={onNextPage}>CRIAR CONTA AGORA</InteractButton>
+          <Button onClick={onNextPage} variant="outline" className='py-6 text-cyan-500 font-bold rounded-xl'>Agora não</Button>
+
         </footer>
       </div>
     </FrameMotionLateral>

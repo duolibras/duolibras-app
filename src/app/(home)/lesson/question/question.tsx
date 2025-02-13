@@ -3,9 +3,9 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { QuestionType } from "@/domains/lesson/api/@types";
+import { cn } from "@/lib/utils";
 import { questions } from "@/shared/store/mocks/questions";
 import { Camera } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 
 interface IProps {
@@ -23,7 +23,7 @@ export function Question({ questionId, selected, onSelected }: IProps) {
       {question.type === QuestionType.SINGLE_CHOICE && (
         <div className="w-full">
           <AspectRatio ratio={16/9}>
-          <video autoPlay loop>
+          <video autoPlay loop playsInline> 
             <source src={question.videoUrl!} type="video/mp4" />
           </video>
           </AspectRatio>

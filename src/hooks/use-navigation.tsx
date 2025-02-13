@@ -14,6 +14,7 @@ export function useNavigation() {
     toChapter: () => router.push('/chapter'),
     toLesson: () => router.push('/lesson'),
     toLessonComplete: () => router.push('/lesson-completed'),
+    toSignature: () => router.push('/signature'),
     goBack: () => router.back(),
   };
 }

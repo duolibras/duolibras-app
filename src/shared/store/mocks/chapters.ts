@@ -7,8 +7,8 @@ export const chaptersUnit1 = [
     name: 'Fundamentos essenciais',
     description: 'Saudações e Cumprimentos',
     lessons: lessonsUnit1,
-    lessonsAccomplished: 2,
-    lessonsCount: 5,
+    lessonsAccomplished: 0,
+    lessonsCount: 4,
     status: Status.AVAILABLE
   },
   {

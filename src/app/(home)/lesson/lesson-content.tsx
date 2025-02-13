@@ -4,12 +4,12 @@ import { ModuleType } from "@/domains/lesson/api/@types";
 import { useMemo, useState } from "react";
 
 import { useNavigation } from "@/hooks/use-navigation";
+import { questions } from "@/shared/store/mocks/questions";
 import { useStore } from "@/shared/store/use-store";
 import { LessonFooter } from "./components/lesson-footer";
 import { LessonHeader } from "./components/lesson-header";
 import { Content } from "./content/content";
 import { Question } from "./question/question";
-import { questions } from "@/shared/store/mocks/questions";
 
 
 export function LessonContent() {
@@ -51,7 +51,7 @@ export function LessonContent() {
               />
         }
   
-      <LessonFooter selected={currentModule.type === ModuleType.CONTENT || !!selected} onContinue={handleContinue} />
+      <LessonFooter type={currentModule.type} selected={currentModule.type === ModuleType.CONTENT || !!selected || currentModule.questionId === '5'} onContinue={handleContinue} />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 "use client"
 import Splash from '@/assets/images/splash.svg';
+import { Button } from '@/components/ui/button';
+import { InteractButton } from '@/components/ui/interactive-button';
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { OnboardingHeader } from "./(onboarding)/componets/onboarding-header";
-import { all_button_primary_style, all_button_secondary_style } from "./(onboarding)/componets/style";
 
 export default function WelcomeScreen() {
   const navigation = useRouter();
@@ -22,8 +23,8 @@ export default function WelcomeScreen() {
       </main>
 
       <footer className="w-full flex flex-col px-6 gap-4">
-        <button className={all_button_primary_style} onClick={onNextPage}>COMEÇAR AGORA</button>
-        <button className={all_button_secondary_style}>JÁ POSSUO CONTA</button>
+        <InteractButton onClick={onNextPage}>COMEÇAR AGORA</InteractButton>
+        <Button variant="outline" className='py-6 text-cyan-500 font-bold rounded-xl'>JÁ POSSUO CONTA</Button>
       </footer>
     </div>
   )

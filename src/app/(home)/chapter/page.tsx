@@ -22,13 +22,13 @@ export default function Chapter() {
   return (
     <PageSlide>
       <div className="h-full">
-        <header className="px-6 pb-10 pt-6 gap-6 flex flex-col items-center bg-cyan-500/20">
+        <header className="px-6 pb-10 pt-6 gap-6 flex flex-col items-center bg-cyan-500">
           <div className="flex justify-between items-center w-full">
-            <div className="cursor-pointer" onClick={handleGoBack}>
+            <div className="cursor-pointer text-white" onClick={handleGoBack}>
               <ChevronLeft />
             </div>
 
-            <div className="flex gap-4 font-bold tracking-wider text-lg">
+            <div className="flex gap-4 font-bold tracking-wider text-lg bg-cyan-50 px-4 rounded-full py-1">
               <Money />
               <Fire />
               <Hearts />
@@ -36,8 +36,8 @@ export default function Chapter() {
           </div>
 
           <div className="flex items-center flex-col">
-            <h1 className="text-3xl font-medium">{chapter.name}</h1>
-            <span className="text-xl">{chapter.description}</span>
+            <h1 className="text-2xl font-bold  text-gray-100">{chapter.name}</h1>
+            <span className="text-lg font-medium text-gray-100">{chapter.description}</span>
           </div>
 
 

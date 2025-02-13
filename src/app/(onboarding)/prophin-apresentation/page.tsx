@@ -4,10 +4,10 @@ import Image from "next/image";
 import { FrameMotionLateral } from "../componets/frame-motion-lateral";
 import { OnboardingHeader } from "../componets/onboarding-header";
 
-import { Assets } from "@/shared/images"
-import SpeechBubble from "../componets/speech-bubble";
-import { all_button_primary_style } from "../componets/style";
+import { InteractButton } from "@/components/ui/interactive-button";
+import { Assets } from "@/shared/images";
 import { useRouter } from "next/navigation";
+import SpeechBubble from "../componets/speech-bubble";
 
 export default function ProphinApresentationScreen() {
   const navigation = useRouter();
@@ -25,8 +25,8 @@ export default function ProphinApresentationScreen() {
           <Image src={Assets.SVG.ProphinParaLadoEsquerdo} width={100} height={200} alt="Um golfinho amigável em estilo cartoon, em tom azul claro, sorrindo e parecendo saltar para cima. O golfinho tem linhas simples e limpas com um corpo curvo, uma nadadeira dorsal proeminente e uma expressão divertida com um sorriso largo e um olho circular." />
         </main>
 
-        <footer className="w-full flex flex-col px-4 gap-4">
-          <button className={all_button_primary_style} onClick={onNextPage}>CONTINUAR</button>
+        <footer className="w-full flex flex-col px-4">
+          <InteractButton onClick={onNextPage}>CONTINUAR</InteractButton>
         </footer>
       </div>
     </FrameMotionLateral>
