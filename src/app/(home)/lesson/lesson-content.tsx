@@ -6,6 +6,7 @@ import { LessonFooter } from "./components/lesson-footer";
 import { LessonHeader } from "./components/lesson-header";
 import { Content } from "./content/content";
 import { Question } from "./question/question";
+import { questions } from "@/shared/store/mocks/questions";
 
 interface IProps {
   modules: Module[];
@@ -13,7 +14,7 @@ interface IProps {
 
 export function LessonContent({ modules }: IProps) {
   const [step, setStep] = useState<number>(0);
-
+  const [selected, setSelected] = useState("");
   const currentModule = useMemo(() => modules[step], [modules, step]);
 
   return (
@@ -28,10 +29,12 @@ export function LessonContent({ modules }: IProps) {
             : <Question 
                 key={currentModule.questionId!} 
                 questionId={currentModule.questionId!}
+                selected={questions[currentModule.questionId!].answers.find(answer => answer.id === selected)?.id || ""}
+                onSelected={setSelected}
               />
         }
   
-      <LessonFooter onContinue={() => setStep(step + 1)} />
+      <LessonFooter selected={currentModule.type === ModuleType.CONTENT || !!selected} onContinue={() => setStep(step + 1)} />
     </div>
   );
 }

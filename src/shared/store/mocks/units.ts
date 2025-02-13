@@ -16,6 +16,6 @@ export const units = [
     chapters: chaptersUnit2,
     chaptersCount: 5,
     chaptersAccomplished: 3,
-    status: Status.AVAILABLE,
+    status: Status.UNAVAILABLE,
   },
 ];
