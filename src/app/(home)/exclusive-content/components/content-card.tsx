@@ -26,7 +26,7 @@ export const ContentCard = ({
 }: ContentCardProps) => {
   const navigation = useRouter();
   return (  
-    <div className="min-w-96 border border-gray-100 rounded-lg cursor-pointer hover:border-2 hover:border-sky-200 transition-all duration-100 ease-in hover:scale-98" onClick={() => {
+    <div className="min-w-80 border border-gray-100 rounded-lg cursor-pointer hover:border-2 hover:border-sky-200 transition-all duration-100 ease-in hover:scale-98" onClick={() => {
       navigation.push(`content-selected/${id}`)
     }}>
       <AspectRatio ratio={16 / 9} className="bg-muted relative">

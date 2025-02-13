@@ -12,7 +12,7 @@ export default function ContentSelected() {
   console.log(params)
 
   return (
-    <div className="w-full flex flex-col items-center h-screen max-w-lg mx-auto bg-white py-6 px-6">
+    <div className="w-full flex flex-col items-center h-fit max-w-lg mx-auto bg-white py-6 px-6">
       <Header />
       <br />
       <main className="w-full">
