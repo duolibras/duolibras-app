@@ -23,11 +23,18 @@ export const contents: Record<string, Content> = {
     lessonId: '1',
     videoUrl: 'https://duolibras.s3.us-east-1.amazonaws.com/public/bomdia.mp4'
   },
-  '4': {
-    id: '4',
+  '5': {
+    id: '5',
     name: 'Aprenda um novo sinal!',
-    description: 'É assim que se faz a letra B',
+    description: 'C',
     lessonId: '1',
-    videoUrl: ''
+    videoUrl: 'https://duolibras.s3.us-east-1.amazonaws.com/public/c.mp4'
+  },
+  '6': {
+    id: '6',
+    name: 'Aprenda um novo sinal!',
+    description: 'D',
+    lessonId: '1',
+    videoUrl: 'https://duolibras.s3.us-east-1.amazonaws.com/public/d.mp4'
   },
 }

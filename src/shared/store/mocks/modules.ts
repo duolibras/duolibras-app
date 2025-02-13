@@ -18,12 +18,16 @@ export const modulesLessons1 = [
     questionId: '4'
   },
   {
-    type: ModuleType.QUESTION,
-    questionId: '4'
+    type: ModuleType.CONTENT,
+    contentId: '5'
   },
   {
     type: ModuleType.CONTENT,
-    contentId: '5'
+    contentId: '6'
+  },
+  {
+    type: ModuleType.QUESTION,
+    questionId: '7'
   },
 ]
 
