@@ -10,6 +10,7 @@ import HeartDisabled from '@/assets/images/heart-disabled.svg';
 import HeartInfinity from '@/assets/images/heart-infinity.svg';
 import HeartOutline from '@/assets/images/heart-outline.svg';
 import Heart from '@/assets/images/heart.svg';
+import Logo from '@/assets/images/logo.png';
 import Magnifier from '@/assets/images/magnifier.svg';
 import Mascote from '@/assets/images/mascote.svg';
 import Money from '@/assets/images/money.svg';
@@ -53,5 +54,6 @@ export const Assets = {
   },
   PNG: {
     Octor,
+    Logo,
   }
 }

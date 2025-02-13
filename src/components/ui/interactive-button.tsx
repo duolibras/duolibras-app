@@ -10,7 +10,7 @@ export function InteractButton({ children, className, variant = 'default', ...pr
   return (
     <div 
       className={cn(
-        "border-b-4 border-solid border-cyan-600 rounded-xl",
+        "border-b-4 border-solid border-cyan-600 rounded-xl w-full",
         variant === 'secondary' && 'border-purple-700',
         variant === 'outline' && 'border-0'
       )}
